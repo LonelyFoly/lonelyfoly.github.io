@@ -1,410 +1,80 @@
 <!DOCTYPE html>
-<html lang = "zxx">
+<html lang="ru">
 <head>
-  <meta charset="utf-8"/>
-  <link href="./css/main_styles.css" rel="stylesheet" type="text/css"/>
-  <link href="./css/header_styles.css" rel="stylesheet" type="text/css"/>
-  <link href="./css/footer_styles.css" rel="stylesheet" type="text/css"/>
-  <link href="./css/slider_styles.css" rel="stylesheet" type="text/css"/>
-  <script src="scripts/index_script.js"> </script>
-  <script src="scripts/slider_script.js"> </script>
-  <meta name="viewport" content="width=device-width"/>
-  <title>Шаблончик</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>С Днюхой, Паша!</title>
+  <link rel="stylesheet" href="./css/main_styles.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fdf6e3;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .welcome {
+      padding: 50px 20px;
+      background: url('./imgs/content_background.svg') no-repeat center;
+      background-size: cover;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .subtitle {
+      font-size: 1.5em;
+      margin-bottom: 30px;
+    }
+    .meme {
+      max-width: 80%;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin: 20px 0;
+    }
+    .quotes {
+      margin: 40px auto;
+      max-width: 600px;
+      text-align: left;
+    }
+    .quote {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-left: 5px solid #007acc;
+      font-style: italic;
+    }
+    .footer {
+      margin-top: 60px;
+      padding: 20px;
+      background: #333;
+      color: #fff;
+    }
+  </style>
 </head>
-<!--медиа для мобилки, планшетика-->
-<body onclick="toggleMenutoCLose();"  onload="define_count_of_sliders();">
-<header id="headerforJs">
-  <div id="profileNav">
-    <div class="nav-element"><a href = "#" class="nav-link">EN</a><img class ="nav-element-arrow" alt="picture" src="./imgs/arrow.svg"/></div>
-    <div class="nav-element"><a href = "./cart.html" class="nav-link"><img class ="profileNav-icon" alt="picture" src="./imgs/cart.svg"/></a></div>
-    <div class="nav-element nav-element_tohidden"><a href = "./loginIndex.html" class="nav-link"><img class ="profileNav-icon" alt="picture" src="./imgs/user.svg"/></a></div>
-    <div class="nav-element nav-element_hidden" onclick="togglemobileMenuToToggle();"><a class="nav-link"><img class ="profileNav-icon" alt="picture" src="./imgs/hidden_menu.png"/></a></div>
-  </div>
-  <a id ="logoLink" href="#" ><img id ="logo" alt="picture" src="./imgs/logo.svg"/></a>
-
-    <nav class="mainNav">
-      <div class="nav-element" onclick="toggleMenuToToggle(0);"> <a href = "#" class="nav-link"><p class="nav-link-text">PRODUCTS</p><span class="nav-link-underline underline"> </span></a><img class ="nav-element-arrow" alt="picture" src="./imgs/arrow.svg"/></div>
-      <div class="nav-element"> <a href = "#" class="nav-link"><p class="nav-link-text">PRICING</p><span class="nav-link-underline"> </span></a></div>
-      <div class="nav-element" onclick="toggleMenuToToggle(1);"><a href = "#" class="nav-link"><p class="nav-link-text">SERVICES</p><span class="nav-link-underline underline"> </span></a><img class ="nav-element-arrow" alt="picture" src="./imgs/arrow.svg"/></div>
-      <div class="nav-element" onclick="toggleMenuToToggle(2);" ><a href = "#" class="nav-link"><p class="nav-link-text">FOR PROS</p><span class="nav-link-underline underline"> </span></a><img class ="nav-element-arrow" alt="picture" src="./imgs/arrow.svg"/></div>
-      <div class="nav-element" onclick="toggleMenuToToggle(3);"><a href = "#" class="nav-link"><p class="nav-link-text">RESOURCES</p><span class="nav-link-underline underline"> </span></a><img class ="nav-element-arrow" alt="picture" src="./imgs/arrow.svg"/></div>
-    </nav>
-    <div class="mobiletoggleMenu" style="display: none;">
-
-        <div class="nav-element nav-element_mobile " onclick="toggleMenuToToggle(0);"> <a href = "#" class="nav-link"><p class="nav-link-text">PRODUCTS</p><span class="nav-link-underline underline"> </span></a><img class ="nav-element-arrow" alt="picture" src="./imgs/arrow.svg"/></div>
-        <div class="nav-element nav-element_mobile"> <a href = "#" class="nav-link"><p class="nav-link-text">PRICING</p><span class="nav-link-underline"> </span></a></div>
-        <div class="nav-element nav-element_mobile" onclick="toggleMenuToToggle(1);"><a href = "#" class="nav-link"><p class="nav-link-text">SERVICES</p><span class="nav-link-underline underline"> </span></a><img class ="nav-element-arrow" alt="picture" src="./imgs/arrow.svg"/></div>
-        <div class="nav-element nav-element_mobile" onclick="toggleMenuToToggle(2);"  ><a href = "#" class="nav-link"><p class="nav-link-text">FOR PROS</p><span class="nav-link-underline underline"> </span></a><img class ="nav-element-arrow" alt="picture" src="./imgs/arrow.svg"/></div>
-        <div class="nav-element nav-element_mobile" onclick="toggleMenuToToggle(3);"  ><a href = "#" class="nav-link"><p class="nav-link-text">RESOURCES</p><span class="nav-link-underline underline"> </span></a><img class ="nav-element-arrow" alt="picture" src="./imgs/arrow.svg"/></div>
-        <div class="nav-element nav-element_mobile"><a href = "./loginIndex.html" class="nav-link"><p class="nav-link-text">PROFILE</p></a></div>
-    </div>
-    <div class="toggleMenu" style="display: none;">
-      <div class="toggleMenu-collumn">
-        <div class="toggleMenu-collumn-element"><h2>All templates</h2><p>Discover all the types and kinds of MotoCMS website builder templates and choose a responsive modern design for your purpose!</p></div>
-        <div class="toggleMenu-collumn-element"><h2>All templates</h2><p>Discover all the types and kinds of MotoCMS website builder templates and choose a responsive modern design for your purpose!</p></div>
-      </div>
-      <div class="toggleMenu-collumn">
-        <div class="toggleMenu-collumn-element"><h2>All templates</h2><p>Discover all the types and kinds of MotoCMS website builder templates and choose a responsive modern design for your purpose!</p></div>
-        <div class="toggleMenu-collumn-element"><h2>All templates</h2><p>Discover all the types and kinds of MotoCMS website builder templates and choose a responsive modern design for your purpose!</p></div>
-      </div>
-    </div>
-    <div class="toggleMenu" style="display: none;">
-      <div class="toggleMenu-collumn">
-        <div class="toggleMenu-collumn-element"><h2>White Label</h2><p>Use all MotoCMS designs and re-sell them under your own brand with the white label website builder.</p></div>
-        <div class="toggleMenu-collumn-element"><h2>Hosting</h2><p>Pick a suitable plan from one of the most reputable hosting providers.</p></div>
-      </div>
-    </div>
-    <div class="toggleMenu" style="display: none;">
-      <div class="toggleMenu-collumn">
-        <div class="toggleMenu-collumn-element"><h2>MotoCMS Blog</h2><p>Get all the useful web design & development, SEO, and work-from-home tips from our pro blog team.</p></div>
-        <div class="toggleMenu-collumn-element"><h2>Support</h2><p>Ask questions and get fast expert answers concerning any aspect of site-building.</p></div>
-      </div>
-    </div>
-    <div class="toggleMenu" style="display: none;">
-      <div class="toggleMenu-collumn">
-        <div class="toggleMenu-collumn-element"><h2>Black Label</h2><p>Use all MotoCMS designs and re-sell them under your own brand with the white label website builder.</p></div>
-        <div class="toggleMenu-collumn-element"><h2>Position</h2><p>Pick a suitable plan from one of the most reputable hosting providers.</p></div>
-      </div>
-      <div class="toggleMenu-collumn">
-        <div class="toggleMenu-collumn-element"><h2>Black Label</h2><p>Use all MotoCMS designs and re-sell them under your own brand with the white label website builder.</p></div>
-        <div class="toggleMenu-collumn-element"><h2>Position</h2><p>Pick a suitable plan from one of the most reputable hosting providers.</p></div>
-      </div>
-    </div>
-
-  <span class="toClear"> </span>
-</header>
-<main>
-
-  <!--<div class="main-section WelcomeSection" style="background-image: url('./imgs/content_background.svg')">
-    <img id="main-sectionBackground_1" src="./imgs/content_background.svg">-->
-	   <!--<img id="main-sectionBackground_2" src="./imgs/backgroundElements.png">
-
-    <div id="section-welcomeBlock" >
-      <img id="section-welcomeLogo" alt="picture" src="./imgs/welcome_logo.svg"/>
-      <h1><b>Create your website with</b><br> MotoCMS easy website builder</h1>
-      <p>Get a powerful website today to grow your business & increase your reach</p>
-      <div id="descriptionList">
-        <div class="descriptionList-element"><img alt="picture" src="./imgs/ul_point.svg"><p>NO HIDDEN FEES</p></div>
-        <div class="descriptionList-element"><img alt="picture" src="./imgs/ul_point.svg"><p>NO TECH SKILLS NEEDED</p></div>
-        <div class="descriptionList-element"><img alt="picture" src="./imgs/ul_point.svg"><p>NO LIMITATIONS</p></div>
-      </div>
-
-      <a href = "./loginIndex.html"><div class="btn btnWelcome">Начать бесплатно</div></a>
-      <img class="section-examples" alt="picture" src="./imgs/examples.png"/>
-    </div>
-  </div>-->
-  <!-- <div class="main-section">
-    <div id="section-underWelcomeBlock">
-      <div id ="section-underWelcomeBlock-leftText"> <h2>Лучший конструктор сайтов MotoCMS - создайте сайт мечты сегодня!</h2><p>Онлайн конструктор сайтов — это самый быстрый способ создать свой сайт самому без знания кода и навыков веб дизайна. MotoCMS предоставляет сотни шаблонов сайтов для любых проектов. У нас есть удобный и мощный инструмент с которым Вы играючи сможете проделать работу на которую профессионалы тратят недели. При этом вся работа пройдет в красивом и удобном интерфейсе редактора. Платформа MotoCMS предназначена для комфортного создания и оптимизации веб сайта за считанные дни!</p>
-      <a href = "./loginIndex.html"><div class="btn btnUnderwelcome">Попробовать бесплатно</div></a>
-      </div>
-      <img id="section-underWelcomeBlock-picture" alt="picture" src="./imgs/underWelcome.jpg"/>
-    </div>
-  </div> -->
-  <div class="main-section searchSection">
-    <span id="searchBackground"></span>
-    <div id="section-searchBlock">
-      <h2>Лучшие шаблоны сайтов для любого бизнеса</h2>
-      <p>Хотите получить профессиональный CMS шаблон с подходящим дизайном и функциональностью для своего бизнеса? У нас их тысячи! Вы можете оценить нашу коллекцию готовых шаблонов для корпоративных сайтов, сайтов малого бизнеса и личных страниц. Будь то медицинский, спортивный, косметический или сельскохозяйственный сайт - здесь Вы найдете именно то, что вам нужно. Не забывайте проверять наиболее популярные категории шаблонов или используйте чат, и мы подберем для Вас идеальный вариант!</p>
-      <form id="searchLine">
-        <img alt="picture" src="./imgs/searchIcon.svg" id="searchIcon"/>
-        <input id ="searchObject" type="text" placeholder="Введите ключевые слова" rel="null">
-        <button id="searchButton" type="submit">Поиск</button>
-      </form>
-    </div>
-    <div id="section-SearchMenu" >
-
-      <a href = "#" class="SearchMenu-element"><img class ="SearchMenu-element-icon" alt="picture" src="./imgs/searchmenu1.svg"/><p class="SearchMenu-element-text">Maintenance</p></a>
-      <span class="SearchMenu-element SearchMenu-element_span">|</span>
-      <a href = "#" class="SearchMenu-element"><img class ="SearchMenu-element-icon" alt="picture" src="./imgs/searchmenu2.svg"/><p class="SearchMenu-element-text">Food</p></a>
-      <span class="SearchMenu-element SearchMenu-element_span">|</span>
-      <a href = "#" class="SearchMenu-element"><img class ="SearchMenu-element-icon" alt="picture" src="./imgs/searchmenu5.svg"/><p class="SearchMenu-element-text">Entertainment</p></a>
-      <span class="SearchMenu-element SearchMenu-element_span specialSpan">|</span>
-      <a href = "#" class="SearchMenu-element"><img class ="SearchMenu-element-icon" alt="picture" src="./imgs/searchmenu3.svg"/><p class="SearchMenu-element-text">Creative</p></a>
-      <span class="SearchMenu-element SearchMenu-element_span">|</span>
-      <a href = "#" class="SearchMenu-element"><img class ="SearchMenu-element-icon" alt="picture" src="./imgs/searchmenu4.svg"/><p class="SearchMenu-element-text">More +</p></a>
-    </div>
-    <div id = "section-gallery">
-      <div class="gallery-collumn"><a href = "#" class="gallery-collumn-link"><img class ="gallery-collumn-poster" alt="picture" src="./imgs/column1-1.jpg"/></a>
-      <a href = "#" class="gallery-collumn-link"><img class ="gallery-collumn-poster" alt="picture" src="./imgs/column1-2.jpg"/></a></div>
-      <div class="gallery-collumn"><a href = "#" class="gallery-collumn-link"><img class ="gallery-collumn-poster" alt="picture" src="./imgs/column2-1.jpg"/></a>
-      <a href = "#" class="gallery-collumn-link"><img class ="gallery-collumn-poster" alt="picture" src="./imgs/column2-2.jpg"/></a></div>
-      <div class="gallery-collumn"><a href = "#" class="gallery-collumn-link"><img class ="gallery-collumn-poster" alt="picture" src="./imgs/column3-1.jpg"/></a>
-      <a href = "#" class="gallery-collumn-link"><img class ="gallery-collumn-poster" alt="picture" src="./imgs/column3-2.jpg"/></a></div>
-    </div>
-	 <a href = "./cart.html"><div class="btn btnSearch">Просмотреть все шаблоны</div></a>
-   <!--<div id="section-searchTemplates">-->
-	 <img class="section-examples_2" alt="picture" src="./imgs/underSearchLine.png"/>
-
-  </div>
-  <div class="main-section">
-    <div class="section-featureBlock">
-      <h2>Powerful Features of MotoCMS Easy Website Builder</h2>
-      <p>Check some of our fey features to make sure that MotoCMS is the easiest website builder to use. This list will show you that building a website is possible for anyone, regardless of your skills and background knowledge.</p>
-      <div class="section-featureBlock-element">
-        <img class="section-featureBlock-element-leftPicture" alt="picture" src="./imgs/feature1.gif"/>
-        <div class ="section-featureBlock-element-rightText">
-          <h2>Simple Drag & Drop Website Builder - No Code, Visual Editing</h2>
-          <p>Simple drag and drop website builder powered MotoCMS is the easiest way to create a website without any coding skills. No matter if you are a beginner or a professional developer, you can intuitively create a functional website without touching a line of code. Simply drag and drop images, texts, blocks and make them live in a couple of clicks.</p>
-        </div>
-
-      </div>
-      <div class="section-featureBlock-element section-featureBlock-element_toReverse">
-        <div class ="section-featureBlock-element-leftText">
-          <h2>Responsive, Mobile-Optimized Design</h2>
-          <p>Build a responsive website that works across various screen sizes. Developed with the latest techniques, MotoCMS easy website creator allows you to make each page of your beautiful website 100% responsive. It means that it will look great on any device, be it a desktop PC, a tablet or a mobile phone. It will also help you to get a better mobile search ranking!</p>
-        </div>
-        <img class="section-featureBlock-element-rightPicture" alt="picture" src="./imgs/feature2.gif"/>
-      </div>
-      <div class="section-featureBlock-element">
-      <img class="section-featureBlock-element-leftPicture" alt="picture" src="./imgs/feature3.gif"/>
-      <div class ="section-featureBlock-element-rightText">
-        <h2>Advanced eCommerce Functionality</h2>
-        <p>Create a high-converting online store easily! You can build your business, sell products and services with advanced eCommerce features powered by MotoCMS. You will get your products' catalog with filtering and search options, including secure payment gateways, tax and shipping settings, flexible payment options and a secure checkout.</p>
-      </div>
-
-    </div>
-
-    <div class="section-featureBlock-element section-featureBlock-element_toReverse">
-      <div class ="section-featureBlock-element-leftText">
-        <h2>Advanced SEO Settings and Optimization Tools</h2>
-        <p>You can have the most beautiful website on the web which will stay unnoticed unless you apply the best SEO practices to help it rank. Simple website builder by MotoCMS has advanced SEO settings which will help you do that right. You will be supported with the appropriate functionality and a comprehensive SEO guide to building the proper URLs, meta tags, and more.</p>
-      </div>
-      <img class="section-featureBlock-element-rightPicture" alt="picture" src="./imgs/feature4.gif"/>
-    </div>
-    <div class="section-featureBlock-element">
-    <img class="section-featureBlock-element-leftPicture" alt="picture" src="./imgs/feature5.gif"/>
-    <div class ="section-featureBlock-element-rightText">
-      <h2>Additional Integrations and Plugins</h2>
-      <p>Our developers are doing their best to add new functionality to the latest releases of the admin panel on a regular basis. Those include a new Google Map Pro widget, Advanced Contact Form plugin, Instagram Post widget, new Tile Gallery, Popup widget, Appointment by Acuity Scheduling, OpenTable and Airbnb Booking Integration and more.</p>
-    </div>
-
-   </div>
-
-   <a href = "./cart.html"><div class="btn  btnFeature">Start your website for free</div></a>
-
-    </div>
+<body>
+  <div class="welcome">
+    <h1>С Днём Рождения, Паша! 🎉</h1>
+    <p class="subtitle">Лучший закупщик, студент, муж и просто красавчик!</p>
+    <img class="meme" src="./imgs/meme_pasha.jpg" alt="Мем про Пашу">
+    <p>Когда видишь скидку 0.5% и уже оформляешь тендер 😎</p>
   </div>
 
-  <div class="main-section serviceSection">
-      <img id="section-serviceBackground"  alt="picture" src="./imgs/serviceBack.svg">
-        <div id="section-serviceBlock">
-        <h2>Customer Services</h2>
-        <p>MotoCMS is more than just an easy website builder for beginners and experienced users. Additionally, we provide our clients with the best customer services to easily start, customize and promote their websites. Here are some of the most popular offers our clients are in love with.</p>
-
-          <div class="section-serviceBlock-line">
-            <div class="section-serviceBlock-line-element"><div class="section-serviceBlock-line-element-picture"><img alt="picture" src="./imgs/service1.svg"/></div> <p>Installation</p></div>
-            <div class="section-serviceBlock-line-element"><div class="section-serviceBlock-line-element-picture"><img alt="picture" src="./imgs/service2.svg"/></div> <p>Customization</p></div>
-            <div class="section-serviceBlock-line-element"><div class="section-serviceBlock-line-element-picture"><img alt="picture" src="./imgs/service3.svg"/></div> <p>1-Year Hosting</p></div>
-            <div class="section-serviceBlock-line-element"><div class="section-serviceBlock-line-element-picture"><img alt="picture" src="./imgs/service4.svg"/></div> <p>Content Creation</p></div>
-          </div>
-          <div class="section-serviceBlock-line">
-            <div class="section-serviceBlock-line-element"><div class="section-serviceBlock-line-element-picture"><img alt="picture" src="./imgs/service5.svg"/></div> <p>Logo Design</p></div>
-            <div class="section-serviceBlock-line-element"><div class="section-serviceBlock-line-element-picture"><img alt="picture" src="./imgs/service6.svg"/></div> <p>SEO</p></div>
-            <div class="section-serviceBlock-line-element"><div class="section-serviceBlock-line-element-picture"><img alt="picture" src="./imgs/service7.svg"/></div> <p>Google Ads</p></div>
-            <div class="section-serviceBlock-line-element"><div class="section-serviceBlock-line-element-picture"><img alt="picture" src="./imgs/service8.svg"/></div> <p>White Label</p></div>
-          </div>
-        </div>
+  <div class="quotes">
+    <div class="quote">«Он может найти поставщика даже в Антарктиде. Паша – бог закупок.» – Случайный поставщик</div>
+    <div class="quote">«На парах он думает о Маше. И немного о SAP.» – Сокурсник</div>
+    <div class="quote">«Когда Паша заходит в комнату – даже курсы валют выстраиваются в шеренгу.» – Валютный аналитик</div>
+    <div class="quote">«Если бы смекалка была валютой – Паша был бы инфляцией.» – Профессор</div>
   </div>
 
-  <div class="main-section">
-    <div class="section-featureBlock">
-      <h2>4 Simple Steps to Create Your Site with a Website Builder</h2>
-      <p>We have done our best to make MotoCMS a simple website builder which can be used by people of all ages and professions. You can create your dream website yourself without any help using ready-made templates and pre-made blocks of content.</p>
-      <div class="section-featureBlock-element">
-        <img class="section-featureBlock-element-leftPicture" alt="picture" src="./imgs/templ1.png"/>
-        <div class ="section-featureBlock-element-rightText">
-          <h2>Choose a Template</h2>
-          <p>Let's start with the most interesting part - the design! We have more than 2500 ready-to-use website templates for all business niches. As soon as you choose something appealing to your taste, you will be able to tweak its structure, color scheme and install the theme to the existing domain. Though, if you have not yet picked the domain name and hosting provides, our customer care team will help you find the most suitable solution.</p>
-        </div>
-
-      </div>
-      <div class="section-featureBlock-element  section-featureBlock-element_toReverse">
-        <div class ="section-featureBlock-element-leftText">
-          <h2>Customize It and Add Your Content</h2>
-          <p>Got the right template and want to know what to do next? Use easy website builder functionality and change the layout the way you want. You can change its color scheme and structure, upload your images, add your logo and create custom texts. The final result can be different from the initial template and look as if you have built a website from scratch on your own. Never stop experimenting, make your website unique and exclusive!</p>
-        </div>
-        <img class="section-featureBlock-element-rightPicture" alt="picture" src="./imgs/templ2.png"/>
-      </div>
-      <div class="section-featureBlock-element">
-      <img class="section-featureBlock-element-leftPicture" alt="picture" src="./imgs/templ3.png"/>
-      <div class ="section-featureBlock-element-rightText">
-        <h2>Add Custom SEO and Analytics</h2>
-        <p>As soon as the design is ready, it's high time to take care of its search engine optimization and performance. Using our easy website builder for beginners, you will have a chance to add the necessary SEO settings to your website, following simple tips from our SEO optimization guide. It was created especially for MotoCMS clients keeping in mind their needs. Google Webmaster Tools and Analytics integrated with the admin panel will also help you better track the results.</p>
-      </div>
-      </div>
-      <div class="section-featureBlock-element section-featureBlock-element_toReverse">
-        <div class ="section-featureBlock-element-leftText">
-          <h2>Publish and Promote It Online</h2>
-          <p>Well done! Your website is live and ready to welcome the visitors. Easy-to-use admin panel powered by easy website builder will help to promote your business online and connect it to the social networks. With a number of helpful widgets, such as Twitter Timeline, Facebook Feed, Instagram Post, or Pinterest Board, you will be able to share the latest feed right on your website. Moreover, you can add Social Buttons and share the content easily!</p>
-        </div>
-        <img class="section-featureBlock-element-rightPicture" alt="picture" src="./imgs/templ4.png"/>
-      </div>
-      <a href = "./cart.html"><div class="btn  btnFeature">Start your website for free</div></a>
-    </div>
-
-
-
-
-    </div>
-
-
-
-  <div class="main-section sliderSection">
-    <div id="section-sliderBlock">
-      <h2>Отзывы клиентов MotoCMS</h2>
-      <p>За более чем десятилетний период работы, лучший конструктор сайтов MotoCMS собрал множество хвалебных отзывов о товарах и услугах. Вы также можете посмотреть отзывы о нашей работе на таких популярных и надежных сайтах, как TrustPilot и SiteJabber.</p>
-      <div class="WrapperSlider">
-        <span class="arrow leftArrow" onclick="slideChange('slider1','left');"><img alt="picture" src="./imgs/arrowleft.svg"/></span>
-        <div class="slider" id="slider1">
-          <div class="slide inactiveSlide" style="opacity: 0;">
-            <img alt="picture" src="./imgs/slidelogo.svg"/>
-            <h2>“Отмечу очень важный момент, что есть пожизненная поддержка, и я убедился в этом на протяжение уже 6 лет.”</h2>
-            <p class="author">Маляев Тимофей</p>
-
-          </div>
-          <div class="slide inactiveSlide leftSlide" style="opacity: 0;">
-            <img alt="picture" src="./imgs/slidelogo.svg"/>
-            <h2>“Всем рекомендую данную CMS систему так как она очень проста в управлении, очень быстро и грамотно настраивается, легко доступна к SEO оптимизации”</h2>
-            <p class="author">Станислав Аракелов</p>
-            <p class="slideDescr">Руководитель Arakelov Group</p>
-          </div>
-          <div class="slide inactiveSlide leftSlide" style="opacity: 0;">
-            <img alt="picture" src="./imgs/slidelogo.svg"/>
-            <h2>“Делаю для друзей, для знакомых сайты. Это как хобби. MotoCMS нравится своей простотой, русским интерфейсом. Все понятно и доступно.”</h2>
-            <p class="author">Максим Орел</p>
-            <p class="slideDescr">Разработчик</p>
-          </div>
-          <div class="slide inactiveSlide leftSlide" style="opacity: 0;">
-            <img alt="picture" src="./imgs/slidelogo.svg"/>
-            <h2>“Мой муж, взглянув на шаблон MotoCMS сказал: "О, да он выглядит еще красивей, чем тот, что мы заказывали у дизайнера. Здесь и красивей и в 3 раза дешевле.”</h2>
-            <p class="author">Марина Горшкова</p>
-            <p class="slideDescr">Врач-Отоларинголог</p>
-          </div>
-          <div class="slide inactiveSlide leftSlide" style="opacity: 0;">
-            <img alt="picture" src="./imgs/slidelogo.svg"/>
-            <h2>“Панель управления MotoCMS настолько проста, что редактировать сайты может даже школьник. Я рекомендую MotoCMS для всех.”</h2>
-            <p class="author">Александр Пашинцев</p>
-          </div>
-          <div class="slide inactiveSlide leftSlide" style="opacity: 0;">
-            <img alt="picture" src="./imgs/slidelogo.svg"/>
-            <h2>“Большое количество профессионально сделанных шаблонов, интуитивно понятная и очень удобная в использовании административная панель, прекрасная работа службы технической поддержки.”</h2>
-            <p class="author">Алексей Бахметьев</p>
-          </div>
-          <div class="slide" >
-            <img alt="picture" src="./imgs/slidelogo.svg"/>
-            <h2>“MotoCMS это круто, это супер, это удобно. Я буду работать дальше с Вами.”</h2>
-            <p class="author">Виктор Анисимов</p>
-            <p class="slideDescr">Веб дизайнер</p>
-          </div>
-
-
-        </div>
-        <span class="arrow rightArrow" onclick="slideChange('slider1','right');"><img alt="picture" src="./imgs/arrowright.svg"/></span>
-      </div>
-
-    </div>
-
+  <div>
+    <h2>От всей души:</h2>
+    <p>Паш, желаем тебе меньше срочных закупок, больше кайфа, счастья в семье и в жизни, и чтобы в Excel всё всегда сходилось!</p>
+    <p>Ты — 🔥. И это не обсуждается.</p>
   </div>
 
-
-
-  <div class="main-section">
+  <div class="footer">
+    <p>С любовью, твои друзья ❤️</p>
   </div>
-
-
-
-
-</main>
-<footer>
-  <div class="footer-section1">
-    <div class="footer-section1-wrapper">
-    <div class="footer-section1-infoBlock">
-      <h2 class="Hinfoblock">PRODUCTS AND SERVICES</h2>
-      <a href = "#" class="infoBlock-link">Website Builder Templates</a>
-      <a href = "#" class="infoBlock-link">Ecommerce Templates</a>
-      <a href = "#" class="infoBlock-link">Landing Page Templates</a>
-      <a href = "#" class="infoBlock-link">Customer Services</a>
-    </div>
-    <div class="footer-section1-infoBlock">
-      <h2 class="Hinfoblock">COMPANY</h2>
-      <a href = "#" class="infoBlock-link">About Us</a>
-      <a href = "#" class="infoBlock-link">Why Choose Us</a>
-      <a href = "#" class="infoBlock-link">Release Notes</a>
-      <a href = "#" class="infoBlock-link">FAQs</a>
-      <a href = "#" class="infoBlock-link">Blog</a>
-    </div>
-
-    <div class="footer-section1-infoBlock">
-      <h2 class="Hinfoblock">PROJECTS</h2>
-      <a href = "#" class="infoBlock-link">White Label</a>
-      <a href = "#" class="infoBlock-link">Learn How to Make a Website</a>
-      <a href = "#" class="infoBlock-link">Made on MotoCMS</a>
-      <a href = "#" class="infoBlock-link">SEO Website Builder</a>
-    </div>
-    <div class="footer-section1-infoBlock">
-      <h2 class="Hinfoblock">COMPARE</h2>
-      <a href = "#" class="infoBlock-link">MotoCMS vs WordPress</a>
-      <a href = "#" class="infoBlock-link">MotoCMS vs Wix</a>
-      <a href = "#" class="infoBlock-link">MotoCMS vs Squarespace</a>
-      <a href = "#" class="infoBlock-link">MotoCMS vs Duda</a>
-    </div>
-    <div class="footer-section1-infoBlock">
-      <h2 class="Hinfoblock">CONTACTS</h2>
-      <a href = "#" class="infoBlock-link">Contact Us</a>
-      <a href = "#" class="infoBlock-link">Support</a>
-      <a href = "#" class="infoBlock-link">Submit a Request</a>
-    </div>
-    <div class="footer-section1-infoBlock">
-      <h2 class="Hinfoblock">FOLLOW</h2>
-      <div id="infoBlock-linkline">
-        <a href = "#" class="linkline-link"><img alt="picture" class ="linkline-link-icon" src="./imgs/facebook.svg"/></a>
-        <a href = "#" class="linkline-link"><img alt="picture" class ="linkline-link-icon" src="./imgs/twitter.svg"/></a>
-        <a href = "#" class="linkline-link"><img alt="picture" class ="linkline-link-icon" src="./imgs/youtube.svg"/></a>
-        <a href = "#" class="linkline-link"><img alt="picture" class ="linkline-link-icon" src="./imgs/linkedin.svg"/></a>
-        <a href = "#" class="linkline-link"><img alt="picture" class ="linkline-link-icon" src="./imgs/instagram.svg"/></a>
-        <a href = "#" class="linkline-link"><img alt="picture" class ="linkline-link-icon" src="./imgs/pinterest.svg"/></a>
-      </div>
-      <p id="infoBlock-underlinkline">Sign up to get the latest <br> news and discounts!</p>
-      <form>
-          <input id ="underlineInput" type="email" placeholder="Enter your email" rel="null">
-      </form>
-      <button class="btn btnSubscribe" type="submit" value="SUBSCRIBE" rel="null">Enter your email</button>
-
-    </div>
-  </div>
-  </div>
-  <div class="footer-section2">
-    <div class="footer-section2-wrapper">
-    <p id="footer-section2-line-number">+1 914 233 57 88</p>
-    <div class="footer-section2-line">
-        <p class="footer-section2-line-text">Privacy Policy</p>
-        <p class="footer-section2-line-text">|</p>
-        <p class="footer-section2-line-text">Terms of Use</p>
-        <p class="footer-section2-line-text">|</p>
-        <p class="footer-section2-line-text">Refund Policy</p>
-    </div>
-
-    <p class="footer-section2-line">Copyright © 2021 MotoCMS.com. Maestro Solutions LTD. All Rights Reserved</p>
-    <div class="footer-section2-line">
-      <p class="footer-section2-line-text">TemplateMonster</p>
-      <p class="footer-section2-line-text">|</p>
-      <p class="footer-section2-line-text">Zemez</p>
-      <p class="footer-section2-line-text">|</p>
-      <p class="footer-section2-line-text">Crocoblock</p>
-      <p class="footer-section2-line-text">|</p>
-      <p class="footer-section2-line-text">Weblium</p>
-      <p class="footer-section2-line-text">|</p>
-      <p class="footer-section2-line-text">MotoPress</p>
-      <p class="footer-section2-line-text">|</p>
-      <p class="footer-section2-line-text">MonsterONE</p>
-      <p class="footer-section2-line-text">|</p>
-      <p class="footer-section2-line-text">Web Design Library</p>
-      <p class="footer-section2-line-text">|</p>
-    </div>
-    </div>
-  </div>
-</footer>
 </body>
-
 </html>
