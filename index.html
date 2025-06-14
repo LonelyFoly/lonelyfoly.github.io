@@ -2,8 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>С Днюхой, Паша!</title>
+  <title>С днём рождения, Паша!</title>
   <link rel="stylesheet" href="./css/main_styles.css">
   <style>
     body {
@@ -18,6 +17,7 @@
       padding: 50px 20px;
       background: url('./imgs/content_background.svg') no-repeat center;
       background-size: cover;
+      color: #fff;
     }
     h1 {
       font-size: 3em;
@@ -37,7 +37,6 @@
       margin: 40px auto;
       max-width: 600px;
       text-align: left;
-      color: #333;
     }
     .quote {
       background: #fff;
@@ -46,37 +45,259 @@
       border-left: 5px solid #007acc;
       font-style: italic;
     }
-    .footer {
-      margin-top: 60px;
-      padding: 20px;
-      background: #333;
-      color: #fff;
-    }
+
   </style>
+
+  <link href="./css/main_styles.css" rel="stylesheet" type="text/css"/>
+  <link href="./css/header_styles.css" rel="stylesheet" type="text/css"/>
+  <link href="./css/footer_styles.css" rel="stylesheet" type="text/css"/>
+  <link href="./css/slider_styles.css" rel="stylesheet" type="text/css"/>
+  <script src="scripts/index_script.js"> </script>
+  <script src="scripts/slider_script.js"> </script>
+  <meta name="viewport" content="width=device-width"/>
 </head>
-<body>
+<body onload="define_count_of_sliders();">
   <div class="welcome">
-    <h1>С Днём Рождения, Паша! 🎉</h1>
-    <p class="subtitle">Лучший закупщик, студент, муж и просто красавчик!</p>
-    <img class="meme" src="./imgs/meme_pasha.jpg" alt="Мем про Пашу">
-    <p>Когда видишь скидку 0.5% и уже оформляешь тендер 😎</p>
-  </div>
+    <h1>С днём рождения, Паша! 🎉</h1>
+    <p class="subtitle">Лучший друг, закупщик, студент, любящий муж и просто красавчик!</p>
+    <img class="meme" src="./imgs/gosling.gif" alt="Мем">
+<p style="
+  font-weight: bold; 
+  color: #000; 
+  border: 2px solid #000; 
+  padding: 10px 15px; 
+  border-radius: 8px; 
+  background-color: #fff;
+  width: fit-content;
+  margin: 0 auto;
+">
+  Да-да, это сайт-поздравление 🙀. Здесь тебя будут хвалить 😎
+</p>
+<p class="subtitle" style="padding-bottom: 20px;margin-top: 12px;">Дизайнер я не очень. И я очень злился пока делал, но сделал!!!</p>
 
-  <div class="quotes">
-    <div class="quote">«Он может найти поставщика даже в Антарктиде. Паша – бог закупок.» – Случайный поставщик</div>
-    <div class="quote">«На парах он думает о Маше. И немного о SAP.» – Сокурсник</div>
-    <div class="quote">«Когда Паша заходит в комнату – даже курсы валют выстраиваются в шеренгу.» – Валютный аналитик</div>
-    <div class="quote">«Если бы смекалка была валютой – Паша был бы инфляцией.» – Профессор</div>
   </div>
+<!-- Блок с конём -->
+<div id="horse-container" style="position: relative; height: 150px; overflow: hidden; margin: 80px 0; background: #f0f0f0; border: 2px solid #ccc; border-radius: 8px;">
+  <img src="./imgs/cat.gif" alt="Конь" id="horse" style="position: absolute; bottom: 0; left: -150px; height: 140px; opacity: 0; pointer-events: none; transition: none;">
+</div>
 
-  <div style="color: #222; max-width: 800px; margin: 0 auto; padding: 40px 20px;">
-    <h2>От всей души:</h2>
-    <p>Паш, желаем тебе меньше срочных закупок, больше кайфа, счастья в семье и в жизни, и чтобы в Excel всё всегда сходилось!</p>
+<!-- Скрипт и стили -->
+<style>
+  @keyframes runHorse {
+    0% {
+      left: -150px;
+      opacity: 1;
+    }
+    100% {
+      left: 100%;
+      opacity: 1;
+    }
+  }
+  #horse.horse-run {
+    animation: runHorse 4s linear forwards;
+    opacity: 1 !important;
+  }
+  .slider {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const horse = document.getElementById("horse");
+    const horseContainer = document.getElementById("horse-container");
+
+    function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top < window.innerHeight && rect.bottom > 0
+      );
+    }
+
+    function onScroll() {
+      if (isInViewport(horseContainer) && !horse.classList.contains('horse-run')) {
+        horse.classList.add('horse-run');
+        horse.addEventListener('animationend', () => {
+          horse.classList.remove('horse-run');
+        }, { once: true });
+      }
+    }
+
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+  });
+</script>
+
+<div id="section-gallery">
+  <div class="gallery-collumn">
+    <a href="#" class="gallery-collumn-link"><img class="gallery-collumn-poster" alt="picture" src="./imgs/gallery-1.jpg"/></a>
+    <a href="#" class="gallery-collumn-link"><img class="gallery-collumn-poster" alt="picture" src="./imgs/gallery-2.jpg"/></a>
+  </div>
+  <div class="gallery-collumn">
+    <a href="#" class="gallery-collumn-link"><img class="gallery-collumn-poster" alt="picture" src="./imgs/gallery-3.jpg"/></a>
+    <a href="#" class="gallery-collumn-link"><img class="gallery-collumn-poster" alt="picture" src="./imgs/gallery-4.jpg"/></a>
+  </div>
+  <div class="gallery-collumn">
+    <a href="#" class="gallery-collumn-link"><img class="gallery-collumn-poster" alt="picture" src="./imgs/gallery-5.jpg"/></a>
+    <a href="#" class="gallery-collumn-link"><img class="gallery-collumn-poster" alt="picture" src="./imgs/gallery-6.jpg"/></a>
+  </div>
+</div>
+
+
+<img class="section-examples_2" alt="picture" src="./imgs/underSearchLine.png"/>
+
+ <div class="quotes" style="font-size: 30px; color: black;">
+  <div class="quote">«Он может найти поставщика даже в Антарктиде. Паша – бог закупок, сосите.» – <strong>Случайный поставщик</strong></div>
+  <div class="quote">«На парах он думает о Маше. И немного о SAP. Хэй, гайс, вотсап» – <strong>Сокурсник</strong></div>
+  <div class="quote">«Когда Паша заходит в комнату – рубль крепнет, а доллар зеленеет.» – <strong>Аналитик Камкомбанк</strong></div>
+  <div class="quote">«Если бы смекалка была валютой – Паша был бы инфляцией.» – <strong>Профессор Харламова</strong></div>
+</div>
+
+<div class="main-section sliderSection">
+  <div id="section-sliderBlock">
+   <h2>Праздничные мемы 🎉 <span style="font-size: 0.6em; color: #666;">(это слайдер, потереби стрелочки)</span></h2>
+    <div class="WrapperSlider">
+      <span class="arrow leftArrow" onclick="slideChange('slider1','left');"><img alt="arrow left" src="./imgs/arrowleft.svg"/></span>
+      <div class="slider" id="slider1">
+
+        <div class="slide inactiveSlide" style="opacity: 0;">
+          <img alt="мем" src="./imgs/meme1.jpg"/>
+
+        </div>
+
+        <div class="slide inactiveSlide leftSlide" style="opacity: 0;">
+          <img alt="мем" src="./imgs/meme2.jpg"/>
+
+        </div>
+
+        <div class="slide inactiveSlide leftSlide" style="opacity: 0;">
+          <img alt="мем" src="./imgs/meme3.jpg"/>
+        </div>
+
+        <div class="slide inactiveSlide leftSlide" style="opacity: 0;">
+          <img alt="мем" src="./imgs/meme4.jpg"/>
+        </div>
+
+        <div class="slide inactiveSlide leftSlide" style="opacity: 0;">
+          <img alt="мем" src="./imgs/meme5.jpg"/>
+        </div>
+
+        <div class="slide">
+          <img alt="мем" src="./imgs/meme6.jpg"/>
+        </div>
+
+      </div>
+      <span class="arrow rightArrow" onclick="slideChange('slider1','right');"><img alt="arrow right" src="./imgs/arrowright.svg"/></span>
+    </div>
+  </div>
+</div>
+
+  <div style="max-width: 800px; margin: 0 auto; padding: 40px 20px; color: black;">
+    <h2 style="margin-bottom: 20px;"><strong>От всей души:</strong></h2>
+    <p style= "font-size:26px; margin-bottom: 20px;">Паш, желаю тебе меньше проблем, больше спокойствия и чистого веселья. А ещё счастья в семье и личных интересах!!!</p>
     <p>Ты — 🔥. И это не обсуждается.</p>
+<button id="spoilerBtn" style="
+  background-color: #ff5722;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+   margin-top: 20px;
+">
+  Клик (это кнопочка)
+</button>
+
+<div id="spoilerText" style="display: none; margin-top: 10px;">
+  🔥🔥🔥АААААААААААА Я ГОРЮ🔥🔥🔥
+</div>
+
+<script>
+  const btn = document.getElementById('spoilerBtn');
+  const spoiler = document.getElementById('spoilerText');
+
+  btn.addEventListener('click', () => {
+    if (spoiler.style.display === 'none') {
+      spoiler.style.display = 'block';
+      btn.textContent = 'Скрыть спойлер';
+      btn.style.backgroundColor = '#d84315'; 
+    } else {
+      spoiler.style.display = 'none';
+      btn.textContent = 'Показать спойлер';
+      btn.style.backgroundColor = '#ff5722'; 
+    }
+  });
+</script>
+
   </div>
 
-  <div class="footer">
-    <p>С любовью, твои друзья ❤️</p>
+<footer>
+  <div class="footer-section1">
+    <div class="footer-section1-wrapper">
+      <div class="footer-section1-infoBlock">
+        <h2 class="Hinfoblock">СМЕШНЫЕ ССЫЛКИ</h2>
+        <a href="https://www.youtube.com/watch?v=xj5f1ZIiYA8&pp=ygUk0YLQtdGB0LDQuiDRgdC10LzQuNC90LDRgCDQt9Cw0LHRi9C7" class="infoBlock-link" target="_blank">Секрет закупщика</a>
+        <a href="https://www.youtube.com/watch?v=QQeH8-SOh6I" class="infoBlock-link" target="_blank">Помним вечные ценности</a>
+        <a href="https://www.youtube.com/watch?v=U06jlgpMtQs" class="infoBlock-link" target="_blank">Я спросил, GPT что пожелать другу, он ответил ссылкой на это видео...</a>
+      </div>
+
+      <div class="footer-section1-infoBlock">
+        <h2 class="Hinfoblock">КОНТАКТЫ</h2>
+        <a href="https://vk.com/matveevpaul" class="infoBlock-link">Написать Паше</a>
+        <a href="https://www.mos.ru/pgu2/landing/target/7700000000197651737/" class="infoBlock-link">Поддержка</a>
+        <a href="https://vk.com/lonelyfoly" class="infoBlock-link">Написать автору странички</a>
+      </div>
+
+      <div class="footer-section1-infoBlock">
+        <h2 class="Hinfoblock">ПОДПИСКА</h2>
+        <p>Подпишись, чтобы получать последние новости и мемы! <br></br> Какой же лютый звездёж - я на самом деле не понимаю, зачем я оставил эту часть. Но пусть будет... <br></br>Смотри как прикольно заполняется!</p>
+        <form>
+          <input id="subscribeEmail" type="email" placeholder="Введите ваш email" required style="padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+          <button type="submit" class="btn btnSubscribe" style="line-height: normal;
+vertical-align: middle; margin-top: 8px; padding: 10px 20px; border: none; border-radius: 6px; background-color: #ff5722; color: #fff; font-weight: bold; cursor: pointer;">Подписаться</button>
+        </form>
+      </div>
+    </div>
   </div>
+
+  <div class="footer-section2">
+    <div class="footer-section2-wrapper">
+      <p class="footer-section2-line-text">&copy; 2025 Паша с др Inc. Все права на мемы защищены (не сажайте на бутылку)</p>
+      <div class="footer-section2-line" style="display: flex; gap: 8px; align-items: center; justify-content: center; margin: 10px 0;">
+        <p class="footer-section2-line-text">Политика кринжефикации</p>
+        <p class="footer-section2-line-text">|</p>
+        <p class="footer-section2-line-text">Условия бебриования</p>
+        <p class="footer-section2-line-text">|</p>
+        <p class="footer-section2-line-text">Уга буга пипи пупу</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
